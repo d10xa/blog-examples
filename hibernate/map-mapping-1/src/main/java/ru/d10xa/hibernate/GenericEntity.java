@@ -2,7 +2,6 @@ package ru.d10xa.hibernate;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.ToString;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,7 +11,6 @@ import java.io.Serializable;
 @MappedSuperclass
 @Data
 @EqualsAndHashCode(of = {"id"})
-@ToString(of = {"id"})
 public abstract class GenericEntity implements Serializable {
    @Id @GeneratedValue
    protected Long id;
