@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 @Entity
 @Data
-@EqualsAndHashCode(of = {"report.id","rowName"})
+@EqualsAndHashCode(of = {"rowName"}, callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"row_name", "report_id"})})
