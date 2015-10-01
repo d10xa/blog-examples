@@ -1,0 +1,31 @@
+buildscript {
+    ext {
+        springBootVersion = '1.2.5.RELEASE'
+    }
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    }
+}
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'spring-boot'
+
+war.baseName = "foo"
+jar.archiveName = "foo.jar"
+
+repositories {
+    jcenter()
+    maven { url "http://repo.spring.io/libs-release" }
+}
+
+configurations {
+    providedRuntime
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+}
