@@ -1,0 +1,2 @@
+[ -f jetty-runner-9.3.3.v20150827.jar ] || wget http://central.maven.org/maven2/org/eclipse/jetty/jetty-runner/9.3.3.v20150827/jetty-runner-9.3.3.v20150827.jar
+java -jar jetty-runner-9.3.3.v20150827.jar build/app.war
