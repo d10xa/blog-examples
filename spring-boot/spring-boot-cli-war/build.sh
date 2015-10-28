@@ -1,5 +1,7 @@
 rm -rf build
-mkdir -p build/tmp build/tmp/WEB-INF/ build/tmp/WEB-INF/classes/templates build/tmp/WEB-INF/lib build/tmp/WEB-INF/lib-provided
+mkdir -p build/tmp/WEB-INF/classes/templates
+mkdir build/tmp/WEB-INF/lib
+mkdir build/tmp/WEB-INF/lib-provided
 spring jar build/app.jar App.groovy ServletInitializer.groovy
 unzip build/app.jar -d build/extracted_jar
 cp -p $(find build/extracted_jar/lib -name '*tomcat*') build/tmp/WEB-INF/lib-provided
