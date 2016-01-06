@@ -1,0 +1,12 @@
+<e:Envelope
+        xmlns:e="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:w="http://weather"
+        xmlns:h="http://help.weather">
+  <e:Header/>
+  <e:Body>
+    <w:GetWeather>
+      <h:CityName>Vladimir</h:CityName>
+      <h:CountryName>Russian Federation</h:CountryName>
+    </w:GetWeather>
+  </e:Body>
+</e:Envelope>

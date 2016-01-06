@@ -2,5 +2,6 @@ rootProject.name = 'blog-examples'
 include(
         'hibernate:map-mapping-1',
         'hibernate:set-mapping-1',
-        'spring-boot:spring-boot-war'
+        'spring-boot:spring-boot-war',
+        'groovy-xml'
 )

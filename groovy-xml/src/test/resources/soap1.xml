@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ns1:GetWeather xmlns:ns1="http://weather" xmlns:ns2="http://help.weather">
+            <ns2:CityName>Vladimir</ns2:CityName>
+            <ns2:CountryName>Russian Federation</ns2:CountryName>
+        </ns1:GetWeather>
+    </soapenv:Body>
+</soapenv:Envelope>
