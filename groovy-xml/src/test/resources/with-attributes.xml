@@ -1,0 +1,6 @@
+<a:Envelope xmlns:a="http://a"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://localhost:8080/a http://localhost:8080/a.xsd">
+    <a:User name="andrey"/>
+    <no-ns></no-ns>
+</a:Envelope>

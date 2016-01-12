@@ -14,7 +14,7 @@ class XmlNsSpec extends Specification {
         xml = new XmlSlurper().parseText(xmlString)
     }
 
-    def "find all namespaces in xml"() {
+    def "find all namespaces in xml elements"() {
         when:
         List<String> namespaces = xml.'**'.collect { it.namespaceURI() }.unique()
 
@@ -41,6 +41,23 @@ class XmlNsSpec extends Specification {
 
         then:
         result == XmlUtil.serialize(file('soap2.xml').text)
+    }
+
+    def 'attributes with namespaces'() {
+        given: "xml file with xsi:schemaLocation attribute"
+        String xmlString = file('with-attributes.xml').text
+        xml = new XmlSlurper().parseText(xmlString)
+
+        when:
+        List<String> namespaces = xml.'**'.inject([]) { list, el ->
+            list += el.namespaceURI()
+            list += el.attributes()*.key
+                    .findAll { it.startsWith("{") }
+                    .collect { it[1..it.indexOf("}")-1] }
+        }.unique().minus('')
+
+        then:
+        namespaces.contains "http://www.w3.org/2001/XMLSchema-instance"
     }
 
     private File file(String path) {
